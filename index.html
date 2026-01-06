@@ -364,6 +364,55 @@
                 max-width: 90%;
             }
         }
+      /* DÚVIDAS / FAQ */
+.faq {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.faq-card {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+.faq-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #0f4c81;
+}
+
+.faq-header:hover {
+    background: #f1f5f9;
+}
+
+.seta {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+.faq-content {
+    display: none;
+    padding: 15px 20px;
+    border-top: 1px solid #eee;
+    font-size: 15px;
+}
+
+.faq-card.active .faq-content {
+    display: block;
+}
+
+.faq-card.active .seta {
+    transform: rotate(180deg);
+}
+
     </style>
 </head>
 
@@ -382,7 +431,7 @@
             <nav>
                 <a href="#servicos"><span>🧰</span>Serviços</a>
                 <a href="#clientes"><span>🤝</span>Clientes</a>
-                <a href="#"><span>❓</span>Dúvidas</a>
+                <a href="#duvidas"><span>❓</span>Dúvidas</a>
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLScW36Q0pbIoAQN3s6MFd1aXoY8dRvIilslO1a80IwRH8xKPIg/viewform?usp=dialog"   target="_blank" rel="noopener noreferrer"> <span>👷</span>Trabalhe Conosco</a>
                 <a href="javascript:void(0)" onclick="abrirLogin()"><span>🏠</span>Login</a>
             </nav>
@@ -479,6 +528,47 @@
             </div>
         </div>
     </div>
+  
+    <section id="duvidas">
+    <div class="container">
+        <h2>Dúvidas Frequentes</h2>
+
+        <div class="faq">
+            <!-- Card Jurídico -->
+            <div class="faq-card">
+                <div class="faq-header" onclick="toggleFaq(this)">
+                    <span>Jurídico</span>
+                    <span class="seta">⌄</span>
+                </div>
+                <div class="faq-content">
+                    <p>Descreva aqui</p>
+                </div>
+            </div>
+
+            <!-- Card Contratos -->
+            <div class="faq-card">
+                <div class="faq-header" onclick="toggleFaq(this)">
+                    <span>Contratos</span>
+                    <span class="seta">⌄</span>
+                </div>
+                <div class="faq-content">
+                    <p>Descreva aqui</p>
+                </div>
+            </div>
+
+            <!-- Card Tipos de Serviços -->
+            <div class="faq-card">
+                <div class="faq-header" onclick="toggleFaq(this)">
+                    <span>Tipos de Serviços</span>
+                    <span class="seta">⌄</span>
+                </div>
+                <div class="faq-content">
+                    <p>Descreva aqui</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
     <section id="clientes">
         <div class="container">
@@ -567,6 +657,10 @@ document.querySelector('.login-box button').addEventListener('click', function()
 
         setInterval(nextSlide, 3000);
         showSlide(slideIndex);
+      function toggleFaq(element) {
+    const card = element.parentElement;
+    card.classList.toggle('active');
+}
     </script>
 
     <footer>
