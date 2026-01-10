@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <style>
-        /* RESET BÁSICO */
-        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -16,10 +14,9 @@
             font-family: Arial, Helvetica, sans-serif;
             background-color: #f4f6f8;
             color: #333;
-            padding-top: 120px; /* top-bar + nav-bar */
+            padding-top: 120px; 
         }
 
-        /* HEADER FIXO - TOPO */
         .top-bar {
             position: fixed;
             top: 0;
@@ -48,10 +45,10 @@
             color: #1f2933;
         }
 
-        /* NAV BAR FIXO ABAIXO */
+
         .nav-bar {
             position: fixed;
-            top: 76px; /* altura da top-bar */
+            top: 76px;
             left: 0;
             width: 100%;
             background-color: #ffffff;
@@ -89,14 +86,12 @@
             font-size: 20px;
         }
 
-        /* CONTAINER PRINCIPAL */
         .container {
             max-width: 1100px;
             margin: 0 auto 60px;
             padding: 0 20px;
         }
 
-        /* TÍTULOS E PARÁGRAFOS */
         h2 {
             color: #1f2933;
             margin: 25px 0 10px;
@@ -108,7 +103,6 @@
             font-size: 16px;
         }
 
-        /* BOTÕES */
         .botoes {
             margin: 30px 0;
             display: flex;
@@ -143,7 +137,6 @@
             background-color: #185a4b;
         }
 
-        /* CARDS ÁREAS DE ATUAÇÃO */
         .cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -175,7 +168,6 @@
             font-size: 18px;
         }
 
-        /* SERVIÇOS */
         .servicos {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -209,7 +201,6 @@
             font-size: 16px;
         }
 
-        /* CARROSSEL CLIENTES */
         .cliente-carousel {
             position: relative;
             max-width: 800px;
@@ -258,7 +249,6 @@
             background-color: #0f4c81;
         }
 
-        /* LOGIN MODAL */
         .login-modal {
             position: fixed;
             top: 0;
@@ -317,7 +307,6 @@
             font-size: 14px;
         }
 
-        /* FOOTER */
         footer {
             background-color: #1f2933;
             color: #ffffff;
@@ -327,12 +316,11 @@
             font-size: 14px;
         }
 
-        /* SCROLL PARA ANCORAS COM DUAS BARRAS FIXAS */
         :target {
-            scroll-margin-top: 130px; /* top-bar + nav-bar */
+            scroll-margin-top: 130px;
         }
 
-        /* RESPONSIVO */
+
         @media (max-width: 768px) {
             .top-bar h1 {
                 font-size: 18px;
@@ -364,7 +352,6 @@
                 max-width: 90%;
             }
         }
-      /* DÚVIDAS / FAQ */
 .faq {
     display: flex;
     flex-direction: column;
@@ -418,7 +405,7 @@
 
 <body>
     <header>
-        <!-- BARRA SUPERIOR: Logo e Nome -->
+
         <div class="top-bar">
             <div class="logo">
                 <img src="https://media.licdn.com/dms/image/v2/C4D0BAQEmT-m-5CKL9w/company-logo_200_200/company-logo_200_200/0/1630498690652?e=2147483647&v=beta&t=jqtSO1BnHPlYqx6y9RWFzABdLUBLTRFCjRcwSpH4ocQ" alt="Logo Punho Fort">
@@ -426,7 +413,6 @@
             </div>
         </div>
 
-        <!-- BARRA INFERIOR: Menu -->
         <div class="nav-bar">
             <nav>
                 <a href="#servicos"><span>🧰</span>Serviços</a>
@@ -534,7 +520,6 @@
         <h2>Dúvidas Frequentes</h2>
 
         <div class="faq">
-            <!-- Card Jurídico -->
             <div class="faq-card">
                 <div class="faq-header" onclick="toggleFaq(this)">
                     <span>Jurídico</span>
@@ -545,7 +530,6 @@
                 </div>
             </div>
 
-            <!-- Card Contratos -->
             <div class="faq-card">
                 <div class="faq-header" onclick="toggleFaq(this)">
                     <span>Contratos</span>
@@ -556,7 +540,6 @@
                 </div>
             </div>
 
-            <!-- Card Tipos de Serviços -->
             <div class="faq-card">
                 <div class="faq-header" onclick="toggleFaq(this)">
                     <span>Tipos de Serviços</span>
@@ -601,7 +584,6 @@
         </div>
     </section>
 
-    <!-- TELA DE LOGIN -->
     <div id="loginModal" class="login-modal">
         <div class="login-box">
             <h2>Área Restrita</h2>
@@ -621,17 +603,17 @@ function fecharLogin() {
     document.getElementById("loginModal").style.display = "none";
 }
 document.querySelector('.login-box button').addEventListener('click', function() {
-    const usuario = document.querySelector('.login-box input[type="text"]').value;
-    const senha = document.querySelector('.login-box input[type="password"]').value;
+    const io = document.querySelector('.login-box input[type="text"]').value;
+    const sh = document.querySelector('.login-box input[type="password"]').value;
 
-    if(usuario === 'iansotero@punhofort.com' && senha === '1556I') {
-        window.open('https://softwaresaxion.github.io/Sistema-Interno-Punho-Fort/', '_blank');
+    if(io === '0' && sh === '0') {
+
         fecharLogin();
     } else {
         alert('Usuário ou senha incorretos!');
     }
 });
-        // CARROSSEL
+
         let slideIndex = 0;
         const slides = document.querySelectorAll('.carousel-slide');
         const dots = document.querySelectorAll('.dot');
